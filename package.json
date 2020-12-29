@@ -1,7 +1,7 @@
 {
-  "name": "react-usehooks",
+  "name": "react-web-hooks",
   "version": "0.1.0",
-  "description": "react-usehooks project",
+  "description": "react-web-hooks project",
   "main": "index.js",
   "files": [
     "dist"
