@@ -5,7 +5,7 @@ const merge = require('webpack-merge')
 const config = {
     mode: 'development',
     entry: {
-        app: './src/index.tsx'
+        hooks: './src/lib/index.ts'
     },
     devServer: {
         contentBase: path.join(__dirname, '../dist'),
