@@ -14,8 +14,7 @@
     "allowSyntheticDefaultImports": true,
     "skipLibCheck": true,
     "declaration": true,
-    "strictNullChecks": true,
-    "declarationDir": "dist/types"
+    "strictNullChecks": true
   },
   "include": [
     "src/lib"

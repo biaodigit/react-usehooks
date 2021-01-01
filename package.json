@@ -2,9 +2,9 @@
   "name": "react-web-hooks",
   "version": "0.2.0",
   "description": "react-web-hooks project",
-  "main": "dist/hooks.js",
-  "module": "dist/hooks.js",
-  "typings": "dist/types/index.d.ts",
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "types": "lib/index.d.ts",
   "files": [
     "dist",
     "lib",
@@ -15,7 +15,7 @@
     "test": "jest --watchAll",
     "dev": "cross-env NODE_ENV=development webpack-dev-server --config config/webpack.dev.config.js",
     "dev:build": "cross-env NODE_ENV=development webpack --config config/webpack.dev.config.js",
-    "build": "rm -rf lib && rm -rf dist && rm -rf es && tsc --module commonjs --outDir lib && tsc --module es6 --outDir es && cross-env NODE_ENV=production webpack --config config/webpack.prod.config.js"
+    "build": "rm -rf lib && rm -rf dist && rm -rf es && tsc -d --module commonjs --outDir lib && tsc -d --module es6 --outDir es && cross-env NODE_ENV=production webpack --config config/webpack.prod.config.js"
   },
   "repository": {
     "type": "git",
