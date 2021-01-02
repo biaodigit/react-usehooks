@@ -14,8 +14,8 @@ function useRequest<T>(config: AxiosRequestConfig, dep: any[]) {
     })
       .then((res: AxiosResponse<T>) => setData(res.data))
       .finally(() => setLoading(false))
-  }, [dep])
-  
+  }, dep)
+
   useEffect(() => {
     return () => {
       source.cancel('abort request')
