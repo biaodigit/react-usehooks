@@ -15,7 +15,9 @@
     "test": "jest --watchAll",
     "dev": "cross-env NODE_ENV=development webpack-dev-server --config config/webpack.dev.config.js",
     "dev:build": "cross-env NODE_ENV=development webpack --config config/webpack.dev.config.js",
-    "build": "rm -rf lib && rm -rf dist && rm -rf es && tsc -d --module commonjs --outDir lib && tsc -d --module es6 --outDir es && cross-env NODE_ENV=production webpack --config config/webpack.prod.config.js"
+    "build:cjs": "rm -rf lib && tsc -d --module commonjs --outDir lib",
+    "build:esm": "rm -rf es && tsc -d --module es6 --outDir es",
+    "build": "rm -rf dist && npm run build:cjs && npm run build:esm && cross-env NODE_ENV=production webpack --config config/webpack.prod.config.js"
   },
   "repository": {
     "type": "git",
@@ -32,6 +34,7 @@
     "@babel/core": "^7.10.3",
     "@testing-library/jest-dom": "^5.11.5",
     "@testing-library/react": "^11.1.0",
+    "@testing-library/react-hooks": "^3.7.0",
     "@testing-library/user-event": "^12.1.8",
     "@types/jest": "^24.9.1",
     "@types/react": "^16.9.41",
@@ -47,6 +50,7 @@
     "jest-watch-typeahead": "^0.6.1",
     "react-app-polyfill": "^2.0.0",
     "react-hot-loader": "^4.12.21",
+    "react-test-renderer": "^17.0.1",
     "ts-loader": "^7.0.5",
     "tslib": "^1.11.1",
     "typescript": "^3.8.3",
@@ -57,13 +61,13 @@
   },
   "dependencies": {
     "axios": "^0.21.1",
+    "lodash.debounce": "^4.0.8",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   },
   "jest": {
     "roots": [
-      "<rootDir>/src",
-      "<rootDir>/__tests__"
+      "<rootDir>/src"
     ],
     "collectCoverageFrom": [
       "src/**/*.{js,jsx,ts,tsx}",
@@ -76,7 +80,6 @@
       "<rootDir>/src/setupTests.ts"
     ],
     "testMatch": [
-      "<rootDir>/__tests__/**/*.{js,jsx,ts,tsx}",
       "<rootDir>/src/**/*.{spec,test}.{js,jsx,ts,tsx}"
     ],
     "testEnvironment": "jsdom",

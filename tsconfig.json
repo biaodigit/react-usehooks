@@ -16,7 +16,15 @@
     "declaration": true,
     "strictNullChecks": true
   },
-  "include": [
-    "src/lib"
+  "exclude": [
+    "node_modules",
+    "config",
+    "dist",
+    "es",
+    "lib",
+    "**/__tests__",
+    "src/App.tsx",
+    "src/index.tsx",
+    "src/setupTests.ts"
   ]
 }
