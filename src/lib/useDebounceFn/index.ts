@@ -15,7 +15,7 @@ function useDebounceFn<T extends Fn>(fn: T, options?: DebounceOptions) {
   )
 
   return {
-    run: debounced,
+    run: debounced as T,
   }
 }
 
