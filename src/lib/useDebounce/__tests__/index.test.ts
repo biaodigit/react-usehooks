@@ -1,6 +1,6 @@
-import { act, renderHook, RenderHookResult } from "@testing-library/react-hooks"
-import useDebounce from "../index"
-import { sleep } from "../../../utils/testingHelpers"
+import { act, renderHook, RenderHookResult } from '@testing-library/react-hooks'
+import useDebounce from '../index'
+import { sleep } from '../../../utils/testingHelpers'
 
 interface ParamsObj {
   fn: (...args: any[]) => any
@@ -9,11 +9,11 @@ interface ParamsObj {
 
 let hook: RenderHookResult<ParamsObj, any>
 
-describe("useDebounce", () => {
-  test("should be define", () => {
+describe('useDebounce', () => {
+  it('should be define', () => {
     expect(useDebounce).toBeDefined()
   })
-  test("useDebounce should be work", async () => {
+  it('useDebounce should be work', async () => {
     let count = 2
     act(() => {
       hook = renderHook(() => useDebounce(count, { wait: 300 }))

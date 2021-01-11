@@ -1,6 +1,6 @@
-import { act, renderHook, RenderHookResult } from "@testing-library/react-hooks"
-import useDebounceFn from "../index"
-import { sleep } from "../../../utils/testingHelpers"
+import { act, renderHook, RenderHookResult } from '@testing-library/react-hooks'
+import useDebounceFn from '../index'
+import { sleep } from '../../../utils/testingHelpers'
 
 interface ParamsObj {
   fn: (...args: any[]) => any
@@ -17,12 +17,12 @@ const setUp = ({ fn, wait }: ParamsObj) =>
 
 let hook: RenderHookResult<ParamsObj, ReturnType<typeof useDebounceFn>>
 
-describe("useDebounceFn", () => {
-  test("should be defind", () => {
+describe('useDebounceFn', () => {
+  it('should be defind', () => {
     expect(useDebounceFn).toBeDefined()
   })
 
-  test("run should work", async () => {
+  it('run should work', async () => {
     act(() => {
       hook = setUp({
         fn: debounceFn,
