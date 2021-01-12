@@ -1,5 +1,9 @@
-export { default as useDebounce } from "./useDebounce"
-export { default as useDebounceFn } from "./useDebounceFn"
-export { default as useRequest } from "./useRequest"
-export { default as usePrevious } from "./usePrevious"
-export { default as useDocTitle } from "./useDocTitle"
+export { default as useDebounce } from './useDebounce'
+export { default as useDebounceFn } from './useDebounceFn'
+export { default as useDebounceEffect } from './useDebounceEffect'
+export { default as useRequest } from './useRequest'
+export { default as usePrevious } from './usePrevious'
+export { default as useDocTitle } from './useDocTitle'
+export { default as usePersistFn } from './usePersistFn'
+export { default as useUnmount } from './useUnmount'
+export { default as useUpdateEffect } from './useUpdateEffect'

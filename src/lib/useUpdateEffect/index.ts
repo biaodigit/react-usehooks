@@ -7,7 +7,7 @@ const useUpdateEffect: typeof useEffect = (effect, deps) => {
     if (!isMounted.current) {
       isMounted.current = true
     } else {
-      effect()
+      return effect()
     }
   }, deps)
 }
