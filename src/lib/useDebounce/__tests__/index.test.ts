@@ -15,9 +15,8 @@ describe('useDebounce', () => {
   })
   it('useDebounce should be work', async () => {
     let count = 2
-    act(() => {
-      hook = renderHook(() => useDebounce(count, { wait: 300 }))
-    })
+
+    hook = renderHook(() => useDebounce(count, { wait: 300 }))
 
     await act(async () => {
       count = 3
